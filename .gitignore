@@ -1,0 +1,4 @@
+/venv
+/migrations
+app.db
+config.py

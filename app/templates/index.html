@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="m-3">Hi, {{ user.username }}!</h2>
+    {% for post in posts %}
+    <div class="card m-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.user_id.username }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+            <a href="#" class="btn btn-dark">check it!</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
