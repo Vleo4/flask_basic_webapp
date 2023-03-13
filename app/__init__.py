@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Blueprint
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -10,5 +10,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
+from app.api import bp as api_bp
+app.register_blueprint(api_bp, url_prefix='/api')
 
+from app.api import users, errors, tokens
 from app import routes, models
